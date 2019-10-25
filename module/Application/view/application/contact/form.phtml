@@ -1,0 +1,16 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<div class="row">
+    <?php foreach($form->getElements() as $element): ?>
+    <div class="form-group col-md-12">
+        
+        <?= $this->formRow($element) ?>
+
+    </div>
+    <?php endforeach ?>
+</div>
+<?php
+echo $this->form()->closeTag();
+?>

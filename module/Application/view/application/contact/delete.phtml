@@ -1,0 +1,19 @@
+<?php
+// module/Album/view/album/album/edit.phtml:
+
+$title = 'Delete contacts';
+$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+<a href="<?= $this->url('contact', ['action'=>'index']) ?>">Voltar</a>
+
+<h3>deseja realmente deletar <?= $contact->getName() ?>?</h3>
+<form method="post" name="excluir" role="form" action="<?php echo $this->url('contact', ['action' => 'delete', 'id' => $contact->getId()]);?>" id="excluir">
+
+    <div class="form-group d-inline">
+    <button type="submit" class="btn btn-danger d-inline">Deletar</a>
+    </div>
+</form>
+
+<a href="<?= $this->url('contact') ?>" class="btn btn-primary d-inline">Voltar</a>

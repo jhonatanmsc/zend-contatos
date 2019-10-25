@@ -1,0 +1,10 @@
+<?php
+// module/Album/view/album/album/edit.phtml:
+
+$title = 'Add contacts';
+$this->headTitle($title);
+?>
+
+<h1><?= $this->escapeHtml($title) ?></h1>
+<a href="<?= $this->url('contact') ?>">Voltar</a>
+<?php echo $this->partial('form') ?>

@@ -1,0 +1,29 @@
+<h1>Contatos</h1>
+<div class="text-right"><a href="<?= $this->url('contact', ['action'=>'add']) ?>">Criar novo</a></div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Celular</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($contacts as $contact): ?>
+    <tr>
+      <td>
+      <a href="<?= $this->url('contact', ['action'=>'view', 'id'=>$contact->getId()]) ?>">
+        <?= $contact->getName() ?>
+      </a>  
+      </td>
+      <td><?= $contact->getEmail() ?></td>
+      <td><?= $contact->getPhone() ?></td>
+      <td>
+        <a href="<?= $this->url('contact', ['action'=>'edit', 'id'=>$contact->getId()]) ?>" class="btn btn-primary d-inline">Editar</a>
+        <a href="<?= $this->url('contact', ['action'=>'delete', 'id'=>$contact->getId()]) ?>" class="btn btn-danger d-inline">Deletar</a>
+      </td>
+    </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>
